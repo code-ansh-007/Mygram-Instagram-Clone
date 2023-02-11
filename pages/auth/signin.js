@@ -21,13 +21,9 @@ function Signin({ providers }) {
                 className="bg-blue-400 text-white font-semibold active:scale-105 transition transform duration-150 outline-none border-none p-2 m-2 rounded-lg"
                 onClick={(e) => {
                   e.preventDefault();
-                  signIn(
-                    provider.id
-                    // {
-                    //   callbackUrl: `https://${process.env.NEXTAUTH_URL}/api/auth/callback/google`,
-                    // }
-                  );
-                  router.push("/");
+                  signIn(provider.id, {
+                    callbackUrl: `https://${process.env.NEXTAUTH_URL}/api/auth/callback/google`,
+                  });
                 }}
               >
                 Sign In with {provider.name}
