@@ -19,7 +19,10 @@ function Signin({ providers }) {
               </span>
               <button
                 className="bg-blue-400 text-white font-semibold active:scale-105 transition transform duration-150 outline-none border-none p-2 m-2 rounded-lg"
-                onClick={() => signIn(provider.id, { callbackUrl: "/" })}
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn(provider.id, { callbackUrl: "/" });
+                }}
               >
                 Sign In with {provider.name}
               </button>
