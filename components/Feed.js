@@ -161,8 +161,8 @@ const Feed = () => {
               <span className="text-xl font-bold text-blue-400">
                 Sign In to View Content
               </span>
-              <Link href="/about">
-                {/* <Link href="/auth/signin"> */}
+              {/* <Link href="/about"> */}
+              <Link href="/auth/signin">
                 <button className="border-[1.5px] hover:bg-blue-400 hover:text-white active:scale-105 transition transform duration-150 px-2 py-1 rounded-full text-blue-500 shadow-blue-400 border-blue-400">
                   Sign In
                 </button>
