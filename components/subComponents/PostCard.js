@@ -104,7 +104,11 @@ const PostCard = ({ id, username, caption, image, profileImage }) => {
         </div>
         {/* IMAGES SECTION */}
         <div>
-          <img src={image} className="object-cover w-full rounded-[4px]" />
+          <img
+            src={image}
+            className="object-cover w-full rounded-[4px]"
+            alt="pic"
+          />
         </div>
         <div className="px-3 py-2">
           {/* ACTIONS SECTION */}

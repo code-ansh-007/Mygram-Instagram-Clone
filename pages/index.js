@@ -24,7 +24,7 @@ export default function Home() {
       {/* HEADER WHEN THE USER IS NOT LOGGED IN */}
       {!session && (
         <div className="hidden items-center justify-center mt-5 md:flex">
-          <Image src={brand} width={200} />
+          <Image src={brand} width={200} alt="brand-pic" />
         </div>
       )}
       {/* HEADER SECTION FOR MOBILE VIEW */}
