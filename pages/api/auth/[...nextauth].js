@@ -12,6 +12,7 @@ export default NextAuth({
     // ! this option of pages is for the customization of the signin page or any other page which we can customize according to our requirement
     signIn: "/auth/signin",
   },
+  secret: process.env.SECRET,
   callbacks: {
     async session({ session, token, user }) {
       session.user.username = session.user.name // * in this code block if the name of the user in the object sent by google is separated by spaces, we are first spliting the string at the space and then re joining it with all the lowercase letters of the name

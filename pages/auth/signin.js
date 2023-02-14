@@ -31,10 +31,10 @@ function Signin({ providers }) {
                 onClick={(e) => {
                   e.preventDefault();
                   signIn(
-                    provider.id
-                    //  {
-                    //   callbackUrl: `https://${process.env.NEXTAUTH_URL}/api/auth/callback/google`,
-                    // }
+                    provider.id,
+                    {
+                      callbackUrl: `https://${process.env.NEXTAUTH_URL}/api/auth/callback/google`,
+                    }
                     // {
                     //   callbackUrl: "/",
                     // }
