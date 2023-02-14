@@ -1,10 +1,19 @@
-import { getProviders, signIn } from "next-auth/react";
+import { getProviders, signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import brand from "../../images/Mygram.png";
 
 function Signin({ providers }) {
   const router = useRouter();
+  const { data: session, status } = useSession();
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/");
+    }
+  }, [status]);
+
   return (
     <>
       {Object.values(providers).map((provider) => {
@@ -21,9 +30,15 @@ function Signin({ providers }) {
                 className="bg-blue-400 text-white font-semibold active:scale-105 transition transform duration-150 outline-none border-none p-2 m-2 rounded-lg"
                 onClick={(e) => {
                   e.preventDefault();
-                  signIn(provider.id, {
-                    callbackUrl: `https://${process.env.NEXTAUTH_URL}/api/auth/callback/google`,
-                  });
+                  signIn(
+                    provider.id
+                    //  {
+                    //   callbackUrl: `https://${process.env.NEXTAUTH_URL}/api/auth/callback/google`,
+                    // }
+                    // {
+                    //   callbackUrl: "/",
+                    // }
+                  );
                 }}
               >
                 Sign In with {provider.name}
